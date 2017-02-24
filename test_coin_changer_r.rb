@@ -69,4 +69,10 @@ class TestCoinChangerRedux < Minitest::Test
     assert_equal({dime: 2}, results)
   end
 
+  def test_11_return_2_dimes_and_1_penny_for_21
+    amount = '21'
+    results = make_change(amount)
+    assert_equal({dime: 2, penny: 1}, results)
+  end
+
 end
