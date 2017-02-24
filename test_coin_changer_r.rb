@@ -153,4 +153,10 @@ class TestCoinChangerRedux < Minitest::Test
     assert_equal({quarter: 1, dime: 1, nickel: 1}, results)
   end
 
+  def test_25_return_1_quarter_and_1_dime_and_1_nickel_and_1_penny_for_41
+    amount = '41'
+    results = make_change(amount)
+    assert_equal({quarter: 1, dime: 1, nickel: 1, penny: 1}, results)
+  end
+
 end
