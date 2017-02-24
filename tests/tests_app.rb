@@ -21,11 +21,9 @@ class TestApp < Minitest::Test
     post '/amount', number: '93'
     assert(last_response.ok?)
     assert(last_response.body.include?("{:quarter=>3, :dime=>1, :nickel=>1, :penny=>3}"))
-  end
-
-  def test_get_amount
-    get '/amount', change: '{:quarter=>1, :dime=>2, :penny=>3}'
-    assert(last_response.ok?)
+    assert(last_response.body.include?('Please enter a number to make change:'))
+    assert(last_response.body.include?('<form method="post" action="amount">'))
+    assert(last_response.body.include?('<input type="text" name="number">'))
   end
 
 end
