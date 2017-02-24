@@ -99,4 +99,10 @@ class TestCoinChangerRedux < Minitest::Test
     assert_equal({quarter: 1}, results)
   end
 
+  def test_17_return_1_quarter_and_1_penny_for_26
+    amount = '26'
+    results = make_change(amount)
+    assert_equal({quarter: 1, penny: 1}, results)
+  end
+
 end
