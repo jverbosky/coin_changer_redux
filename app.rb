@@ -10,7 +10,8 @@ class CoinChangerReduxApp < Sinatra::Base
 
   post '/amount' do
     input = params[:number]
-    "Your number was #{input}."
+    change = make_change(input)
+    "#{change}"
   end
 
 end

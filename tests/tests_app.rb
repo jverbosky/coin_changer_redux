@@ -20,7 +20,7 @@ class TestApp < Minitest::Test
   def test_post_amount
     post '/amount', number: '93'
     assert(last_response.ok?)
-    assert(last_response.body.include?({:quarter=>3, :dime=>1, :nickel=>1, :penny=>3}))
+    assert(last_response.body.include?("{:quarter=>3, :dime=>1, :nickel=>1, :penny=>3}"))
   end
 
 end
