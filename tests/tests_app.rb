@@ -16,4 +16,11 @@ class TestApp < Minitest::Test
     assert(last_response.body.include?('<form method="post" action="amount">'))
     assert(last_response.body.include?('<input type="text" name="number">'))
   end
+
+  def test_post_amount
+    post '/amount', input: '93'
+    assert(last_response.ok?)
+  end
+
+
 end
