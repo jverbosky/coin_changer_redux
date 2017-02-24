@@ -8,4 +8,8 @@ class CoinChangerReduxApp < Sinatra::Base
     erb :start
   end
 
+  post '/amount' do
+
+  end
+
 end

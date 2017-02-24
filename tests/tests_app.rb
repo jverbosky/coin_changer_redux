@@ -20,7 +20,7 @@ class TestApp < Minitest::Test
   def test_post_amount
     post '/amount', input: '93'
     assert(last_response.ok?)
+    assert(last_response.body.include?('93'))
   end
-
 
 end
