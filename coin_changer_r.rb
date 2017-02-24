@@ -6,21 +6,25 @@ def make_change(amount)
     count = 0
     count = total/coins[:quarter]
     change[:quarter] = count
+    total -= count * coins[:quarter]
   end
   if total >= 10
     count = 0
     count = total/coins[:dime]
     change[:dime] = count
+    total -= count * coins[:dime]
   end
   if total >= 5
     count = 0
     count = total/coins[:nickel]
     change[:nickel] = count
+    total -= count * coins[:dime]
   end
   if total >= 1
     count = 0
     count = total/coins[:penny]
     change[:penny] = count
+    total -= count * coins[:dime]
   end
 
     # when 50 then change[:quarter] = 2
