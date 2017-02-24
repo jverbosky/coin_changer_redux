@@ -1,3 +1,7 @@
 def make_change(amount)
-  return {}
+  if amount == "1"
+    return {"penny" => 1}
+  else
+    return {}
+  end
 end
