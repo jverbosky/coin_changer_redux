@@ -11,7 +11,7 @@ class CoinChangerReduxApp < Sinatra::Base
   post '/amount' do
     input = params[:number]
     change = make_change(input)
-    "#{change}"
+    erb :results, locals: {change: change}
   end
 
 end
