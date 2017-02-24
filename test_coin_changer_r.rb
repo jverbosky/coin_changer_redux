@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require_relative "coin_changer.rb"
+require_relative "coin_changer_r.rb"
 
 class TestCoinChangerRedux < Minitest::Test
 
