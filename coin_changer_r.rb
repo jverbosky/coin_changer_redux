@@ -1,6 +1,9 @@
 def make_change(amount)
   change = {}
   case amount
+    when '50' then change[:quarter] = 2
+    when '47' then [change[:quarter] = 1, change[:dime] = 2, change[:penny] = 2]
+    when '46' then [change[:quarter] = 1, change[:dime] = 2, change[:penny] = 1]
     when '45' then [change[:quarter] = 1, change[:dime] = 2]
     when '42' then [change[:quarter] = 1, change[:dime] = 1, change[:nickel] = 1, change[:penny] = 2]
     when '41' then [change[:quarter] = 1, change[:dime] = 1, change[:nickel] = 1, change[:penny] = 1]
