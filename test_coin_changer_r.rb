@@ -33,7 +33,7 @@ class TestCoinChangerRedux < Minitest::Test
     assert_equal({nickel: 1, penny: 1}, results)
   end
 
-  def test_6_return_1_nickel_and_1_penny_for_7
+  def test_6_return_1_nickel_and_2_pennies_for_7
     amount = '7'
     results = make_change(amount)
     assert_equal({nickel: 1, penny: 2}, results)
@@ -51,7 +51,7 @@ class TestCoinChangerRedux < Minitest::Test
     assert_equal({dime: 1, penny: 1}, results)
   end
 
-  def test_9_return_1_dime_and_1_penny_for_12
+  def test_9_return_1_dime_and_2_pennies_for_12
     amount = '12'
     results = make_change(amount)
     assert_equal({dime: 1, penny: 2}, results)
@@ -85,6 +85,12 @@ class TestCoinChangerRedux < Minitest::Test
     amount = '21'
     results = make_change(amount)
     assert_equal({dime: 2, penny: 1}, results)
+  end
+
+  def test_15_return_2_dimes_and_2_pennies_for_22
+    amount = '22'
+    results = make_change(amount)
+    assert_equal({dime: 2, penny: 2}, results)
   end
 
 end
