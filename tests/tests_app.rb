@@ -23,4 +23,9 @@ class TestApp < Minitest::Test
     assert(last_response.body.include?("{:quarter=>3, :dime=>1, :nickel=>1, :penny=>3}"))
   end
 
+  def test_get_amount
+    get '/amount', change: '{:quarter=>1, :dime=>2, :penny=>3}'
+    assert(last_response.ok?)
+  end
+
 end
