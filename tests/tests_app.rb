@@ -18,9 +18,9 @@ class TestApp < Minitest::Test
   end
 
   def test_post_amount
-    post '/amount', input: '93'
+    post '/amount', number: '93'
     assert(last_response.ok?)
-    assert(last_response.body.include?('93'))
+    assert(last_response.body.include?({:quarter=>3, :dime=>1, :nickel=>1, :penny=>3}))
   end
 
 end
